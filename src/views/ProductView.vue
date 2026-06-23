@@ -23,7 +23,7 @@
         <div class="product-info">
           <span class="product-category">{{ categoryName }}</span>
           <h1 class="product-name">{{ product.name }}</h1>
-          
+
           <div class="product-rating">
             <span v-for="s in 5" :key="s" class="star">★</span>
             <span class="rating-count">(48 değerlendirme)</span>
@@ -55,15 +55,16 @@
             </div>
             <button class="btn btn-primary btn-lg">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                <line x1="3" y1="6" x2="21" y2="6"/>
-                <path d="M16 10a4 4 0 0 1-8 0"/>
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 0 1-8 0" />
               </svg>
               Sepete Ekle
             </button>
             <button class="btn btn-outline wishlist-action">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21.3l7.8-7.8 1-1.1a5.5 5.5 0 0 0 0-7.8z"/>
+                <path
+                  d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21.3l7.8-7.8 1-1.1a5.5 5.5 0 0 0 0-7.8z" />
               </svg>
             </button>
           </div>
@@ -131,13 +132,13 @@ const badgeClass = computed(() => {
   align-items: center;
   gap: var(--space-sm);
   font-size: 0.8rem;
-  color: var(--color-gray);
+  color: var(--color-text-main);
   margin-bottom: var(--space-2xl);
   flex-wrap: wrap;
 }
 
 .breadcrumb a {
-  color: var(--color-gray);
+  color: var(--color-text-main);
   transition: color var(--transition-fast);
 }
 
@@ -222,7 +223,7 @@ const badgeClass = computed(() => {
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-weight: 500;
-  color: var(--color-white);
+  color: var(--color-text-main);
   margin-bottom: var(--space-lg);
 }
 
@@ -240,7 +241,7 @@ const badgeClass = computed(() => {
 
 .rating-count {
   font-size: 0.8rem;
-  color: var(--color-gray);
+  color: var(--color-text-main);
 }
 
 .product-pricing {
@@ -260,7 +261,7 @@ const badgeClass = computed(() => {
 
 .product-old-price {
   font-size: 1.2rem;
-  color: var(--color-gray);
+  color: var(--color-text-main);
   text-decoration: line-through;
 }
 
@@ -275,7 +276,7 @@ const badgeClass = computed(() => {
 
 .product-description {
   font-size: 1rem;
-  color: var(--color-gray-light);
+  color: var(--color-text-main);
   line-height: 1.7;
   margin-bottom: var(--space-xl);
 }
@@ -286,7 +287,7 @@ const badgeClass = computed(() => {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-gray);
+  color: var(--color-text-main);
   margin-bottom: var(--space-md);
 }
 
@@ -303,10 +304,10 @@ const badgeClass = computed(() => {
   gap: var(--space-sm);
   padding: 6px 14px;
   font-size: 0.8rem;
-  background: rgba(201, 168, 76, 0.08);
-  border: 1px solid rgba(201, 168, 76, 0.15);
+  background: rgba(201, 168, 76, 0.06);
+  border: 1px solid rgba(201, 168, 76, 0.2);
   border-radius: var(--radius-full);
-  color: var(--color-gold-light);
+  color: var(--color-gold-dark);
 }
 
 .feature-check {
@@ -338,7 +339,7 @@ const badgeClass = computed(() => {
   align-items: center;
   justify-content: center;
   font-size: 1.1rem;
-  color: var(--color-gray-light);
+  color: var(--color-text-main);
   transition: all var(--transition-fast);
 }
 
@@ -351,7 +352,7 @@ const badgeClass = computed(() => {
   width: 40px;
   text-align: center;
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--color-text-main);
 }
 
 .btn-lg {
@@ -380,7 +381,7 @@ const badgeClass = computed(() => {
   align-items: center;
   gap: var(--space-sm);
   font-size: 0.8rem;
-  color: var(--color-gray);
+  color: var(--color-text-main);
 }
 
 .guarantee-icon {

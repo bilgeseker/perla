@@ -1,5 +1,6 @@
 <template>
-  <router-link :to="`/urun/${product.id}`" class="product-card" @mouseenter="isHovered = true" @mouseleave="isHovered = false">
+  <router-link :to="`/urun/${product.id}`" class="product-card" @mouseenter="isHovered = true"
+    @mouseleave="isHovered = false">
     <!-- Image -->
     <div class="card-image-wrapper">
       <div class="card-image-bg"></div>
@@ -7,13 +8,14 @@
       <div class="card-overlay">
         <button class="overlay-btn" @click.prevent title="Favorilere Ekle">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21.3l7.8-7.8 1-1.1a5.5 5.5 0 0 0 0-7.8z"/>
+            <path
+              d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21.3l7.8-7.8 1-1.1a5.5 5.5 0 0 0 0-7.8z" />
           </svg>
         </button>
         <button class="overlay-btn" @click.prevent title="Hızlı Bakış">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-            <circle cx="12" cy="12" r="3"/>
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+            <circle cx="12" cy="12" r="3" />
           </svg>
         </button>
       </div>
@@ -35,14 +37,14 @@
     </div>
 
     <!-- Add to cart -->
-    <button class="card-cart-btn" @click.prevent>
+    <!-- <button class="card-cart-btn" @click.prevent>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-        <line x1="3" y1="6" x2="21" y2="6"/>
-        <path d="M16 10a4 4 0 0 1-8 0"/>
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <path d="M16 10a4 4 0 0 1-8 0" />
       </svg>
       Sepete Ekle
-    </button>
+    </button> -->
   </router-link>
 </template>
 
@@ -207,7 +209,7 @@ const badgeClass = computed(() => {
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 500;
-  color: var(--color-white);
+  color: var(--color-text-main);
   line-height: 1.3;
 }
 
@@ -221,9 +223,9 @@ const badgeClass = computed(() => {
   font-size: 0.65rem;
   padding: 3px 8px;
   border-radius: var(--radius-full);
-  background: rgba(201, 168, 76, 0.08);
-  color: var(--color-gold-light);
-  border: 1px solid rgba(201, 168, 76, 0.12);
+  background: rgba(201, 168, 76, 0.06);
+  color: var(--color-gold-dark);
+  border: 1px solid rgba(201, 168, 76, 0.2);
 }
 
 .card-pricing {
@@ -264,7 +266,7 @@ const badgeClass = computed(() => {
   padding: var(--space-md);
   background: var(--color-bg-elevated);
   border-top: 1px solid rgba(201, 168, 76, 0.08);
-  color: var(--color-gray-light);
+  color: var(--color-text-main);
   font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 0.05em;

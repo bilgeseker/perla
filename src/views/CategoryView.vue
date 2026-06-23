@@ -23,11 +23,7 @@
     <section class="section">
       <div class="container">
         <div v-if="categoryProducts.length" class="products-grid">
-          <ProductCard 
-            v-for="product in categoryProducts" 
-            :key="product.id" 
-            :product="product" 
-          />
+          <ProductCard v-for="product in categoryProducts" :key="product.id" :product="product" />
         </div>
         <div v-else class="empty-state">
           <span class="empty-icon">✦</span>
@@ -67,7 +63,7 @@ const categoryProducts = computed(() => {
 .category-header-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, var(--color-black-light) 0%, var(--color-bg) 100%);
+  background: linear-gradient(180deg, var(--color-bg-elevated) 0%, var(--color-bg) 100%);
 }
 
 .category-header-bg::before {
@@ -90,12 +86,12 @@ const categoryProducts = computed(() => {
   align-items: center;
   gap: var(--space-sm);
   font-size: 0.8rem;
-  color: var(--color-gray);
+  color: var(--color-text-main);
   margin-bottom: var(--space-xl);
 }
 
 .breadcrumb a {
-  color: var(--color-gray);
+  color: var(--color-text-main);
   transition: color var(--transition-fast);
 }
 
@@ -111,7 +107,7 @@ const categoryProducts = computed(() => {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 400;
-  color: var(--color-white);
+  color: var(--color-text-main);
   margin-bottom: var(--space-md);
   display: flex;
   align-items: center;
@@ -130,7 +126,7 @@ const categoryProducts = computed(() => {
 
 .category-desc {
   font-size: 1rem;
-  color: var(--color-gray);
+  color: var(--color-text-main);
 }
 
 .products-grid {
@@ -155,12 +151,12 @@ const categoryProducts = computed(() => {
 .empty-title {
   font-family: var(--font-display);
   font-size: 1.8rem;
-  color: var(--color-white);
+  color: var(--color-text-main);
   margin-bottom: var(--space-md);
 }
 
 .empty-desc {
-  color: var(--color-gray);
+  color: var(--color-text-main);
   margin-bottom: var(--space-xl);
 }
 

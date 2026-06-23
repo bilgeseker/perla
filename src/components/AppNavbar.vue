@@ -1,5 +1,5 @@
 <template>
-  <header class="navbar" :class="{ scrolled: isScrolled, 'menu-open': isMobileMenuOpen }">
+  <header class="navbar" :class="{ scrolled: isScrolled, 'menu-open': isMobileMenuOpen, 'navbar-home': isHomePage }">
     <div class="navbar-inner container">
       <!-- Logo -->
       <router-link to="/" class="navbar-logo" @click="closeMobileMenu">
@@ -15,17 +15,12 @@
           <span class="nav-link dropdown-trigger">
             Kategoriler
             <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
-              <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
             </svg>
           </span>
           <transition name="dropdown">
             <div v-if="isDropdownOpen" class="dropdown-menu">
-              <router-link 
-                v-for="cat in categories" 
-                :key="cat.id"
-                :to="`/kategori/${cat.slug}`" 
-                class="dropdown-item"
-              >
+              <router-link v-for="cat in categories" :key="cat.id" :to="`/kategori/${cat.slug}`" class="dropdown-item">
                 <span class="dropdown-icon">{{ cat.icon }}</span>
                 {{ cat.name }}
               </router-link>
@@ -40,26 +35,28 @@
       <div class="navbar-actions">
         <button class="action-btn search-btn" aria-label="Ara">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8"/>
-            <path d="m21 21-4.3-4.3"/>
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
           </svg>
         </button>
         <button class="action-btn wishlist-btn" aria-label="Favoriler">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21.3l7.8-7.8 1-1.1a5.5 5.5 0 0 0 0-7.8z"/>
+            <path
+              d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21.3l7.8-7.8 1-1.1a5.5 5.5 0 0 0 0-7.8z" />
           </svg>
         </button>
         <button class="action-btn cart-btn" aria-label="Sepet">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-            <line x1="3" y1="6" x2="21" y2="6"/>
-            <path d="M16 10a4 4 0 0 1-8 0"/>
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
           </svg>
           <span class="cart-count">0</span>
         </button>
 
         <!-- Mobile menu toggle -->
-        <button class="mobile-menu-toggle" @click="toggleMobileMenu" :aria-label="isMobileMenuOpen ? 'Menüyü Kapat' : 'Menüyü Aç'">
+        <button class="mobile-menu-toggle" @click="toggleMobileMenu"
+          :aria-label="isMobileMenuOpen ? 'Menüyü Kapat' : 'Menüyü Aç'">
           <span class="hamburger" :class="{ open: isMobileMenuOpen }">
             <span></span>
             <span></span>
@@ -76,19 +73,16 @@
           <router-link to="/" class="mobile-nav-link" @click="closeMobileMenu">Ana Sayfa</router-link>
           <div class="mobile-nav-divider"></div>
           <span class="mobile-nav-label">Kategoriler</span>
-          <router-link 
-            v-for="cat in categories" 
-            :key="cat.id"
-            :to="`/kategori/${cat.slug}`" 
-            class="mobile-nav-link mobile-cat-link"
-            @click="closeMobileMenu"
-          >
+          <router-link v-for="cat in categories" :key="cat.id" :to="`/kategori/${cat.slug}`"
+            class="mobile-nav-link mobile-cat-link" @click="closeMobileMenu">
             <span class="mobile-cat-icon">{{ cat.icon }}</span>
             {{ cat.name }}
           </router-link>
           <div class="mobile-nav-divider"></div>
-          <a href="#ozellikler" class="mobile-nav-link" @click.prevent="scrollToSection('ozellikler'); closeMobileMenu()">Neden Perla?</a>
-          <a href="#iletisim" class="mobile-nav-link" @click.prevent="scrollToSection('iletisim'); closeMobileMenu()">İletişim</a>
+          <a href="#ozellikler" class="mobile-nav-link"
+            @click.prevent="scrollToSection('ozellikler'); closeMobileMenu()">Neden Perla?</a>
+          <a href="#iletisim" class="mobile-nav-link"
+            @click.prevent="scrollToSection('iletisim'); closeMobileMenu()">İletişim</a>
         </nav>
       </div>
     </transition>
@@ -96,13 +90,17 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { useRoute } from 'vue-router'
 import { categories } from '../data/products.js'
 
+const route = useRoute()
 const isScrolled = ref(false)
 const isDropdownOpen = ref(false)
 const isMobileMenuOpen = ref(false)
 let dropdownTimeout = null
+
+const isHomePage = computed(() => route.path === '/')
 
 function handleScroll() {
   isScrolled.value = window.scrollY > 50
@@ -157,10 +155,10 @@ onUnmounted(() => {
 }
 
 .navbar.scrolled {
-  background: rgba(10, 10, 10, 0.92);
+  background: rgba(250, 249, 246, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.12);
 }
 
 .navbar-inner {
@@ -183,7 +181,7 @@ onUnmounted(() => {
 .logo-icon {
   font-size: 1.5rem;
   color: var(--color-gold);
-  animation: pulse-gold 3s ease infinite;
+  /* animation: pulse-gold 3s ease infinite; */
 }
 
 .logo-text {
@@ -198,10 +196,18 @@ onUnmounted(() => {
   font-size: 0.6rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--color-gray);
+  color: var(--color-text-main);
   margin-left: -4px;
   align-self: flex-end;
   margin-bottom: 4px;
+}
+
+.navbar-home .logo-tagline {
+  color: var(--color-white);
+}
+
+.navbar.scrolled .logo-tagline {
+  color: var(--color-text-main);
 }
 
 /* Navigation */
@@ -216,10 +222,18 @@ onUnmounted(() => {
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-gray-light);
+  color: var(--color-text-main);
   transition: color var(--transition-fast);
   position: relative;
   padding: var(--space-sm) 0;
+}
+
+.navbar-home .nav-link {
+  color: var(--color-white);
+}
+
+.navbar.scrolled .nav-link {
+  color: var(--color-text-main);
 }
 
 .nav-link::after {
@@ -325,8 +339,16 @@ onUnmounted(() => {
   width: 40px;
   height: 40px;
   border-radius: var(--radius-full);
-  color: var(--color-gray-light);
+  color: var(--color-text-main);
   transition: all var(--transition-fast);
+}
+
+.navbar-home .action-btn {
+  color: var(--color-white);
+}
+
+.navbar.scrolled .action-btn {
+  color: var(--color-text-main);
 }
 
 .action-btn:hover {
@@ -370,14 +392,30 @@ onUnmounted(() => {
   left: 0;
   width: 100%;
   height: 2px;
-  background: var(--color-gray-light);
+  background: var(--color-text-main);
   border-radius: 2px;
   transition: all var(--transition-normal);
 }
 
-.hamburger span:nth-child(1) { top: 0; }
-.hamburger span:nth-child(2) { top: 7px; }
-.hamburger span:nth-child(3) { top: 14px; }
+.navbar-home .hamburger span {
+  background: var(--color-white);
+}
+
+.navbar.scrolled .hamburger span {
+  background: var(--color-text-main);
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger span:nth-child(2) {
+  top: 7px;
+}
+
+.hamburger span:nth-child(3) {
+  top: 14px;
+}
 
 .hamburger.open span:nth-child(1) {
   top: 7px;
@@ -402,7 +440,7 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(10, 10, 10, 0.98);
+  background: rgba(250, 249, 246, 0.98);
   backdrop-filter: blur(20px);
   padding: var(--space-xl);
   overflow-y: auto;
@@ -420,7 +458,7 @@ onUnmounted(() => {
   gap: var(--space-md);
   padding: var(--space-md) var(--space-lg);
   font-size: 1rem;
-  color: var(--color-gray-light);
+  color: var(--color-text-main);
   border-radius: var(--radius-md);
   transition: all var(--transition-fast);
 }

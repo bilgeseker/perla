@@ -13,18 +13,18 @@
         <div class="hero-text" ref="heroText">
           <span class="hero-tag">✦ XUPING KALİTESİNDE TAKILAR</span>
           <h1 class="hero-title">
-            Zarafetinizi<br/>
+            Zarafetinizi<br />
             <span class="hero-title-accent">Tamamlayın</span>
           </h1>
           <p class="hero-desc">
-            Kararmayan, alerji yapmayan premium kalite takılar. 
+            Kararmayan, alerji yapmayan premium kalite takılar.
             Her parça, tarzınızı yansıtan özenle seçilmiş tasarımlar.
           </p>
           <div class="hero-actions">
             <router-link to="/kategori/kolye" class="btn btn-primary">
               Koleksiyonu Keşfet
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
+                <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </router-link>
             <a href="#ozellikler" class="btn btn-outline" @click.prevent="scrollTo('ozellikler')">Neden Perla?</a>
@@ -61,12 +61,7 @@
           <p class="section-subtitle">Her tarza uygun, özenle seçilmiş takı koleksiyonumuz</p>
         </div>
         <div class="categories-grid">
-          <router-link 
-            v-for="cat in categories" 
-            :key="cat.id" 
-            :to="`/kategori/${cat.slug}`" 
-            class="category-card"
-          >
+          <router-link v-for="cat in categories" :key="cat.id" :to="`/kategori/${cat.slug}`" class="category-card">
             <div class="cat-icon-wrapper">
               <span class="cat-icon">{{ cat.icon }}</span>
             </div>
@@ -87,34 +82,22 @@
 
         <!-- Filter Tabs -->
         <div class="filter-tabs">
-          <button 
-            class="filter-tab" 
-            :class="{ active: activeFilter === 'all' }" 
-            @click="activeFilter = 'all'"
-          >Tümü</button>
-          <button 
-            v-for="cat in categories.slice(0, 5)" 
-            :key="cat.id"
-            class="filter-tab" 
-            :class="{ active: activeFilter === cat.slug }" 
-            @click="activeFilter = cat.slug"
-          >{{ cat.name }}</button>
+          <button class="filter-tab" :class="{ active: activeFilter === 'all' }"
+            @click="activeFilter = 'all'">Tümü</button>
+          <button v-for="cat in categories.slice(0, 5)" :key="cat.id" class="filter-tab"
+            :class="{ active: activeFilter === cat.slug }" @click="activeFilter = cat.slug">{{ cat.name }}</button>
         </div>
 
         <!-- Product Grid -->
         <transition-group name="product-grid" tag="div" class="products-grid">
-          <ProductCard 
-            v-for="product in filteredProducts" 
-            :key="product.id" 
-            :product="product" 
-          />
+          <ProductCard v-for="product in filteredProducts" :key="product.id" :product="product" />
         </transition-group>
 
         <div class="products-cta">
           <router-link to="/kategori/kolye" class="btn btn-outline">
             Tüm Ürünleri Gör
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+              <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </router-link>
         </div>
@@ -127,7 +110,7 @@
       <div class="container promo-content">
         <div class="promo-text">
           <span class="promo-tag">✦ ÖZEL FIRSAT</span>
-          <h2 class="promo-title">İlk Siparişinize<br/><span class="gold-text">%15 İndirim</span></h2>
+          <h2 class="promo-title">İlk Siparişinize<br /><span class="gold-text">%15 İndirim</span></h2>
           <p class="promo-desc">Bültenimize abone olun ve ilk alışverişinizde geçerli özel indirim kodunuzu alın.</p>
           <div class="promo-form">
             <input type="email" placeholder="E-posta adresiniz" class="promo-input" />
@@ -169,12 +152,12 @@
           <div class="quality-text">
             <span class="quality-tag">✦ XUPİNG TEKNOLOJİSİ</span>
             <h2 class="quality-title">
-              Kararmayan Takıların<br/>
+              Kararmayan Takıların<br />
               <span class="gold-text">Sırrı</span>
             </h2>
             <p class="quality-desc">
-              Xuping teknolojisi ile üretilen takılarımız, özel alaşım kaplama sayesinde 
-              uzun süre ilk günkü parlaklığını korur. Suya, tere ve parfüme dayanıklı 
+              Xuping teknolojisi ile üretilen takılarımız, özel alaşım kaplama sayesinde
+              uzun süre ilk günkü parlaklığını korur. Suya, tere ve parfüme dayanıklı
               yapısıyla günlük kullanım için idealdir.
             </p>
             <ul class="quality-list">
@@ -309,12 +292,10 @@ function scrollTo(id) {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(10, 10, 10, 0.92) 0%,
-    rgba(10, 10, 10, 0.7) 50%,
-    rgba(10, 10, 10, 0.85) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(10, 10, 10, 0.92) 0%,
+      rgba(10, 10, 10, 0.7) 50%,
+      rgba(10, 10, 10, 0.85) 100%);
 }
 
 .hero-particles {
@@ -361,6 +342,7 @@ function scrollTo(id) {
   font-size: clamp(3rem, 7vw, 5.5rem);
   font-weight: 400;
   line-height: 1.1;
+  /* color: var(--color-text-main); */
   color: var(--color-white);
   margin-bottom: var(--space-xl);
   animation: fadeInUp 0.6s ease 0.15s forwards;
@@ -377,7 +359,7 @@ function scrollTo(id) {
 
 .hero-desc {
   font-size: 1.1rem;
-  color: var(--color-gray-light);
+  color: var(--color-white);
   line-height: 1.7;
   margin-bottom: var(--space-2xl);
   max-width: 480px;
@@ -459,8 +441,17 @@ function scrollTo(id) {
 }
 
 @keyframes scrollPulse {
-  0%, 100% { opacity: 1; height: 40px; }
-  50% { opacity: 0.5; height: 20px; }
+
+  0%,
+  100% {
+    opacity: 1;
+    height: 40px;
+  }
+
+  50% {
+    opacity: 0.5;
+    height: 20px;
+  }
 }
 
 /* ===== CATEGORIES ===== */
@@ -530,7 +521,7 @@ function scrollTo(id) {
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-gray-light);
+  color: var(--color-text-main);
   transition: color var(--transition-fast);
 }
 
@@ -625,7 +616,7 @@ function scrollTo(id) {
 .promo-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--color-black-light) 0%, rgba(201, 168, 76, 0.08) 50%, var(--color-black-light) 100%);
+  background: linear-gradient(135deg, var(--color-black-light) 0%, var(--color-gray) 50%, var(--color-black-light) 100%);
   border-top: 1px solid rgba(201, 168, 76, 0.1);
   border-bottom: 1px solid rgba(201, 168, 76, 0.1);
 }
@@ -659,7 +650,7 @@ function scrollTo(id) {
 
 .promo-desc {
   font-size: 1rem;
-  color: var(--color-gray);
+  color: var(--color-white);
   line-height: 1.6;
   margin-bottom: var(--space-xl);
   max-width: 450px;
@@ -684,8 +675,9 @@ function scrollTo(id) {
   transition: border-color var(--transition-fast);
 }
 
+
 .promo-input::placeholder {
-  color: var(--color-gray);
+  color: var(--color-gold-shimmer);
 }
 
 .promo-input:focus {
@@ -781,7 +773,7 @@ function scrollTo(id) {
 
 .feature-desc {
   font-size: 0.875rem;
-  color: var(--color-gray);
+  color: var(--color-text-main);
   line-height: 1.6;
 }
 
@@ -808,13 +800,13 @@ function scrollTo(id) {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 400;
   line-height: 1.2;
-  color: var(--color-white);
+  color: var(--color-text-main);
   margin-bottom: var(--space-xl);
 }
 
 .quality-desc {
   font-size: 1rem;
-  color: var(--color-gray);
+  color: var(--color-text-main);
   line-height: 1.7;
   margin-bottom: var(--space-xl);
 }
@@ -830,7 +822,7 @@ function scrollTo(id) {
   align-items: center;
   gap: var(--space-md);
   font-size: 0.95rem;
-  color: var(--color-gray-light);
+  color: var(--color-text-main);
 }
 
 .quality-check {
@@ -906,7 +898,7 @@ function scrollTo(id) {
 
 .testimonial-text {
   font-size: 0.95rem;
-  color: var(--color-gray-light);
+  color: var(--color-text-main);
   line-height: 1.7;
   font-style: italic;
   margin-bottom: var(--space-xl);
@@ -940,12 +932,12 @@ function scrollTo(id) {
 .author-name {
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--color-white);
+  color: var(--color-text-main);
 }
 
 .author-product {
   font-size: 0.75rem;
-  color: var(--color-gray);
+  color: var(--color-text-main);
 }
 
 /* ===== RESPONSIVE ===== */
