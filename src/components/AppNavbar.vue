@@ -165,7 +165,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
+  height: 80px;
   gap: var(--space-xl);
 }
 
@@ -179,16 +179,16 @@ onUnmounted(() => {
 }
 
 .logo-icon {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: var(--color-gold);
   /* animation: pulse-gold 3s ease infinite; */
 }
 
 .logo-text {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.3em;
   color: var(--color-gold);
 }
 
@@ -436,13 +436,13 @@ onUnmounted(() => {
 /* Mobile Menu */
 .mobile-menu {
   position: fixed;
-  top: 64px;
+  top: 80px;
   left: 0;
   right: 0;
   bottom: 0;
   background: rgba(250, 249, 246, 0.98);
   backdrop-filter: blur(20px);
-  padding: var(--space-lg);
+  padding: var(--space-xl);
   overflow-y: auto;
 }
 
@@ -456,8 +456,8 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: var(--space-md);
-  padding: var(--space-sm) var(--space-lg);
-  font-size: 0.9rem;
+  padding: var(--space-md) var(--space-lg);
+  font-size: 1rem;
   color: var(--color-text-main);
   border-radius: var(--radius-md);
   transition: all var(--transition-fast);
@@ -473,7 +473,7 @@ onUnmounted(() => {
 }
 
 .mobile-cat-icon {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .mobile-nav-label {
@@ -516,6 +516,34 @@ onUnmounted(() => {
 
   .mobile-menu-toggle {
     display: flex;
+  }
+
+  .navbar-inner {
+    height: 68px;
+    gap: var(--space-md);
+  }
+
+  .logo-icon {
+    font-size: 1.3rem;
+  }
+
+  .logo-text {
+    font-size: 1.5rem;
+    letter-spacing: 0.25em;
+  }
+
+  .mobile-menu {
+    top: 68px;
+    padding: var(--space-lg);
+  }
+
+  .mobile-nav-link {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.9rem;
+  }
+
+  .mobile-cat-icon {
+    font-size: 1rem;
   }
 }
 
