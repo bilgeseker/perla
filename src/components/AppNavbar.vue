@@ -165,7 +165,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 64px;
   gap: var(--space-xl);
 }
 
@@ -179,16 +179,16 @@ onUnmounted(() => {
 }
 
 .logo-icon {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: var(--color-gold);
   /* animation: pulse-gold 3s ease infinite; */
 }
 
 .logo-text {
   font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 600;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.2em;
   color: var(--color-gold);
 }
 
@@ -436,13 +436,13 @@ onUnmounted(() => {
 /* Mobile Menu */
 .mobile-menu {
   position: fixed;
-  top: 80px;
+  top: 64px;
   left: 0;
   right: 0;
   bottom: 0;
   background: rgba(250, 249, 246, 0.98);
   backdrop-filter: blur(20px);
-  padding: var(--space-xl);
+  padding: var(--space-lg);
   overflow-y: auto;
 }
 
@@ -456,8 +456,8 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: var(--space-md);
-  padding: var(--space-md) var(--space-lg);
-  font-size: 1rem;
+  padding: var(--space-sm) var(--space-lg);
+  font-size: 0.9rem;
   color: var(--color-text-main);
   border-radius: var(--radius-md);
   transition: all var(--transition-fast);
@@ -473,7 +473,7 @@ onUnmounted(() => {
 }
 
 .mobile-cat-icon {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .mobile-nav-label {
@@ -516,6 +516,46 @@ onUnmounted(() => {
 
   .mobile-menu-toggle {
     display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-inner {
+    height: 56px;
+    gap: var(--space-md);
+  }
+
+  .logo-icon {
+    font-size: 1rem;
+  }
+
+  .logo-text {
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+  }
+
+  .logo-tagline {
+    font-size: 0.5rem;
+  }
+
+  .action-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .mobile-menu {
+    top: 56px;
+    padding: var(--space-md);
+  }
+
+  .mobile-nav-link {
+    padding: var(--space-xs) var(--space-md);
+    font-size: 0.85rem;
+  }
+
+  .mobile-nav-label {
+    font-size: 0.7rem;
+    padding: var(--space-sm) var(--space-md);
   }
 }
 </style>
