@@ -29,7 +29,7 @@
             </router-link>
             <a href="#ozellikler" class="btn btn-outline" @click.prevent="scrollTo('ozellikler')">Neden Perla?</a>
           </div>
-          <div class="hero-stats">
+          <!-- <div class="hero-stats">
             <div class="stat">
               <span class="stat-number">5000+</span>
               <span class="stat-label">Mutlu Müşteri</span>
@@ -44,7 +44,7 @@
               <span class="stat-number">%100</span>
               <span class="stat-label">Kararmaz Garanti</span>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="hero-scroll-indicator" @click="scrollTo('kategoriler')">
@@ -107,7 +107,7 @@
     <!-- ===== PROMOTIONAL BANNER ===== -->
     <section class="promo-section">
       <div class="promo-bg"></div>
-      <div class="container promo-content">
+      <!-- <div class="container promo-content">
         <div class="promo-text">
           <span class="promo-tag">✦ ÖZEL FIRSAT</span>
           <h2 class="promo-title">İlk Siparişinize<br /><span class="gold-text">%15 İndirim</span></h2>
@@ -122,6 +122,25 @@
           <div class="promo-ring promo-ring-2"></div>
           <div class="promo-ring promo-ring-3"></div>
           <span class="promo-percent">%15</span>
+        </div>
+      </div> -->
+      <div class="container promo-content">
+        <div class="promo-text">
+          <span class="promo-tag">✦ PERLA FARKI</span>
+          <h2 class="promo-title">Stilinizin<br /><span class="gold-text">günlük tamamlayıcısı</span></h2>
+          <p class="promo-desc">
+            Kararmayan, alerji yapmayan ve uzun ömürlü parlaklık sunan takılarımızla her anı şık ve güvenli kılın.
+          </p>
+          <router-link to="/kategori/kolye" class="btn btn-primary">Koleksiyonu İncele</router-link>
+        </div>
+        <div class="promo-visual">
+          <div class="promo-ring promo-ring-1"></div>
+          <div class="promo-ring promo-ring-2"></div>
+          <div class="promo-ring promo-ring-3"></div>
+          <div class="promo-badge">
+            <span>✦</span>
+            <small>Premium kalite</small>
+          </div>
         </div>
       </div>
     </section>
@@ -938,6 +957,52 @@ function scrollTo(id) {
 .author-product {
   font-size: 0.75rem;
   color: var(--color-text-main);
+}
+
+.promo-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.promo-highlight-item {
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-gold-shimmer);
+  font-size: 0.9rem;
+}
+
+.promo-badge {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(201, 168, 76, 0.12);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  box-shadow: 0 0 0 12px rgba(201, 168, 76, 0.05);
+  color: var(--color-gold);
+  text-align: center;
+}
+
+.promo-badge span {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.promo-badge small {
+  margin-top: 0.35rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gold-shimmer);
 }
 
 /* ===== RESPONSIVE ===== */

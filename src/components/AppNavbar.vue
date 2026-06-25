@@ -39,20 +39,20 @@
             <path d="m21 21-4.3-4.3" />
           </svg>
         </button>
-        <button class="action-btn wishlist-btn" aria-label="Favoriler">
+        <!-- <button class="action-btn wishlist-btn" aria-label="Favoriler">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path
               d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21.3l7.8-7.8 1-1.1a5.5 5.5 0 0 0 0-7.8z" />
           </svg>
-        </button>
-        <button class="action-btn cart-btn" aria-label="Sepet">
+        </button> -->
+        <!-- <button class="action-btn cart-btn" aria-label="Sepet">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
             <line x1="3" y1="6" x2="21" y2="6" />
             <path d="M16 10a4 4 0 0 1-8 0" />
           </svg>
           <span class="cart-count">0</span>
-        </button>
+        </button> -->
 
         <!-- Mobile menu toggle -->
         <button class="mobile-menu-toggle" @click="toggleMobileMenu"
@@ -162,6 +162,7 @@ onUnmounted(() => {
 }
 
 .navbar-inner {
+  padding-left: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
